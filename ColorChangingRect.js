@@ -1,10 +1,10 @@
 const rectangle=document.querySelector("#rectangle");
 
-const rectLocation=rectangle.getBoundingClientRect();
+const rectLocation=rectangle.getBoundingClientRect();// Returns the info about anyy element's dimensions/positions
 
-rectangle.addEventListener("mousemove",function(details){
+rectangle.addEventListener("mousemove",function(details){//Here, the argument (can write any name instead of "details") in this function will return the information about "mousemove" event 
     
-    let posX=details.clientX;
+    let posX=details.clientX;//.clientX is the x-position of the mouse pointer
     let rect_x=rectLocation.x;
     let width=rectLocation.width;
 
