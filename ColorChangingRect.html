@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing Rectangle</title>
+    
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+        }
+        h1{
+            text-align: center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 50px; 
+            color: aliceblue;
+        }
+        h3{
+            text-align: center;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 20px; 
+            color: aliceblue;
+        }
+        #rectangle{
+            border: solid white;
+            height: 280px;
+            width: 600px;
+            margin: 50px auto;
+        }
+        @media only screen and (max-width: 768px){
+            #rectangle{
+                height: 160px;
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Sunu's Colour Changing Rectangle</h1>
+    <h3>Hover around your pointer L----R to play with it</h3>
+    
+    <div id="rectangle"></div>
+    
+    <h3>Reload the page if it misbehaves</h3>
+        
+        <script>const rectangle=document.querySelector("#rectangle");
+
+            const rectLocation=rectangle.getBoundingClientRect();
+            
+            rectangle.addEventListener("mousemove",function(details){
+                
+                let posX=details.clientX;
+                let rect_x=rectLocation.x;
+                let width=rectLocation.width;
+
+                if(posX < rect_x + width/2){
+                    
+                    let intensity = (posX - rect_x)*(255/(width/2));
+            
+                    let rgb="rgb("+intensity+","+intensity+",255)";
+            
+                    rectangle.style.backgroundColor=rgb; 
+                }
+                else{
+                    
+                    let intensity = width/2-(posX - rect_x - width/2)*(255/(width/2));
+                    
+                    let rgb="rgb(255,"+intensity+","+intensity+")";
+                    
+                    rectangle.style.backgroundColor=rgb; 
+                }
+            })
+            console.log(rectLocation);
+        </script>
+
+    </body>
+</html>
