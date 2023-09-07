@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: rgb(0, 0, 34);">
+    <div id="colorbox">
+        <h1>Sunu's Temperature Converter</h1>
+    </div>
+    <div id="workbox">
+        <h2>Convert from : </h2>
+        
+        <div class="inputs">
+            <input type="radio" name="from" id="celsius1"checked>
+            <label for="celsius1">Celsius</label>
+            <input type="radio" name="from" id="fahrenheit1">
+            <label for="fahrenheit1">Fahrenheit</label>
+            <input type="radio" name="from" id="kelvin1">
+            <label for="kelvin1">Kelvin</label>
+        </div>
+
+        <br/>
+
+        <h3>Input value : </h3>
+        
+        <div class="inputs">
+            <input type="number" name="number" id="number"value=0>
+        </div>
+        
+        <br/>
+        <br/>
+        
+        <h2>Convert to : </h2>
+        
+        <div class="inputs">
+            <input type="radio" name="to" id="celsius2">
+            <label for="celsius2">Celsius</label>
+            <input type="radio" name="to" id="fahrenheit2"checked>
+            <label for="fahrenheit2">Fahrenheit</label>
+            <input type="radio" name="to" id="kelvin2">
+            <label for="kelvin2">Kelvin</label>
+        </div>
+        
+        <br/>
+        <div style="text-align: center; margin: 30px 0 10px;">
+            <input type="button" value="Convert" id="convertBTN">
+        </div>
+        
+        <h3>Output : </h3>
+        <span id="output">NULL</span>
+
+        <script src="script.js"></script>
+        
+    </div>
+</body>
+</html>
